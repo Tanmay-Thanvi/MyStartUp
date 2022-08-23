@@ -1,0 +1,467 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+  <link rel="stylesheet" href="{% static 'css/newhome.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet">
+
+
+
+  <!--load all styles -->
+</head>
+
+<body>
+  <nav>
+    <div class="logo">Mystartup</div>
+    <input type="checkbox" id="click">
+    <label for="click" class="menu-btn">
+      <i class="fas fa-bars"></i>
+    </label>
+    <ul>
+      <li><a class="active" href="#">Home</a></li>
+      <li><a href="{% url 'dashboard' %}">Explore</a></li>
+      <li><a href="#">About us</a></li>
+      <li><a href="#">Contact us</a></li>
+      {% if request.user.is_authenticated %}
+      <li>
+        <a href="{% url 'Profile' %}">
+          Hello {{ request.user.first_name }}
+        </a>
+      </li>
+      {% else %}
+      {% endif %}
+      {% if request.user.is_authenticated %}
+      <li><a id="logout" href="{% url 'logout' %}" onclick="confirm('Are You sure to logout ?')">Logout</a></li>
+      {% else %}
+      <li><a href="{% url 'login' %}">Login / SignUp</a></li>
+      {% endif %}
+    </ul>
+  </nav>
+  <div class="containerimg">
+    <p style="padding: 3rem 10rem ;">
+      <span class="img-line1 typed-text img-text" id="img-text1"></span><span class="cursor">&nbsp;___</span>
+    </p>
+    <h1>
+      Join us now !
+    </h1>
+    <!-- <div class="img-line1 img-text" id="img-text1" >Have idea ?</div>
+    <div class="img-line2 img-text " id="img-text2" > want to implement</div>
+    <div class="img-line3 img-text " id="img-text3" >Let's Go </div> -->
+  </div>
+  <!-- Button trigger modal -->
+
+
+  <button class="startbtn"> Get Started </button>
+  <!-- Button trigger modal -->
+
+
+
+
+
+  <div class="container-info">
+    <div class="info-img">
+      <img src="{% static 'images/img2.jpg' %}">
+    </div>
+    <div class="info-text">
+      If your finding skilled peers for your project then your at right place,
+      find skilled peers for your project and start today
+    </div>
+  </div>
+
+  <div class="card" style="background-color: black; border-color: black;">
+    <h2 style="margin: auto;"> Explore Domains</h2>
+    <div class="card-body" style="border-bottom:1px black solid;">
+      <h4>Software Development </h4>
+      <div class="flex-list " style="background-color: black;">
+        <img class="arrow" src="{% static 'images/arrow-left.png' %}">
+        <img class="flex-list-img" src="{% static 'images/angularjs.png' %}">
+        <img class="flex-list-img" src="{% static 'images/django.png' %}">
+        <img class="flex-list-img" src="{% static 'images/node-js.png' %}">
+        <img class="flex-list-img" src="{% static 'images/javascript.png' %}">
+        <img class="flex-list-img" src="{% static 'images/java.png' %}">
+        <img class="flex-list-img" src="{% static 'images/csharp.png' %}">
+        <img class="arrow" src="{% static 'images/arrow-right.png' %}">
+      </div>
+    </div>
+  </div>
+  <div class="imgline" style="background-color: rgb(48, 46, 46);">
+    <div style="background-color: rgb(34, 32, 32);">
+      <img class="imgline-img" src="{% static 'images/i1.jpg' %}">
+      <img class="imgline-img" src="{% static 'images/i2.jpg' %}">
+      <img class="imgline-img" src="{% static 'images/i3.jpg' %}">
+    </div>
+
+  </div>
+  <div class="card" style="background-color: black;">
+    <div>
+      <div class="card-body" style="border-bottom:1px black solid;">
+        <h4>Digital marketing </h4>
+        <div class="flex-list">
+          <img class="arrow" src="{% static 'images/arrow-left.png' %}">
+          <img class="flex-list-img" src="{% static 'images/content-management-system.png' %}">
+          <img class="flex-list-img" src="{% static 'images/email-marketing.png' %}">
+          <img class="flex-list-img" src="{% static 'images/public-relation.png' %}">
+          <img class="flex-list-img" src="{% static 'images/seo.png' %}">
+          <img class="flex-list-img" src="{% static 'images/social-media.png' %}">
+          <img class="flex-list-img" src="{% static 'images/video-marketing.png' %}">
+          <img class="arrow" src="{% static 'images/arrow-right.png' %}">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="imgline" style="background-color: rgb(68, 61, 61);">
+    <div style="background-color: rgb(44, 42, 42);">
+      <img class="imgline-img" src="{% static 'images/i4.jpg' %}" style="background-color: black;">
+      <img class="imgline-img" src="{% static 'images/i5.jpg' %}">
+      <img class="imgline-img" src="{% static 'images/i6.jpg' %}">
+    </div>
+  </div>
+  <div class="card" style="background-color: black; border: 0px; border-radius: 0rem;">
+    <div class="card-body" style="border-bottom:1px rgb(0, 0, 0) solid; border-radius:0px;">
+      <h4>Digital marketing </h4>
+      <div class="flex-list">
+        <img class="arrow" src="{% static 'images/arrow-left.png' %}">
+        <img class="flex-list-img" src="{% static 'images/angularjs.png' %}">
+        <img class="flex-list-img" src="{% static 'images/django.png' %}">
+        <img class="flex-list-img" src="{% static 'images/node-js.png' %}">
+        <img class="flex-list-img" src="{% static 'images/javascript.png' %}">
+        <img class="flex-list-img" src="{% static 'images/java.png' %}">
+        <img class="flex-list-img" src="{% static 'images/csharp.png' %}">
+        <img class="arrow" src="{% static 'images/arrow-right.png' %}">
+      </div>
+      </blockquote>
+    </div>
+
+  </div>
+  </div>
+  </div>
+  <footer class="bg-dark text-light text-center text-lg-start">
+    <div class="container p-4">
+      <div class="row">
+        <div class="col-lg-3 col-md-6 mb-2 mb-md-0">
+          <h5 class="text-uppercase m-2">software Development </h5>
+          <ul class="list-unstyled mb-0">
+            <div class="accordion accordion-flush bg-dark " id="accordionFlushExample">
+              <div class="accordion-item bg-dark">
+                <h2 class="accordion-header " id="flush-headingOne">
+                  <button class="accordion-button bg-dark text-light collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    web Development
+                  </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <ul style="  list-style-type: none;">
+                      <li>React js Developer</li>
+                      <li>Node js Developer</li>
+                      <li>Django Developer</li>
+                      <li> Html-css Developer</li>
+                      <li>Javascript Deveoper Developer</li>
+                      <li> Database management</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item bg-dark">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                  <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    Android Deveopment
+                  </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <ul style="  list-style-type: none;">
+                      <li>Flutter Deveoper</li>
+                      <li>java Developer</li>
+                      <li>Firebase</li>
+                      <li> Swift Developer</li>
+                      <li>Kotlin Developer</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item bg-dark">
+                <h2 class="accordion-header" id="flush-headingThree">
+                  <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    Devops
+                  </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <ul style="  list-style-type: none;">
+                      <li>Docker </li>
+                      <li>Kubernates </li>
+                      <li>Aws service</li>
+                      <li>Azure service</li>
+                      <li>Google cloud manager</li>
+
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item bg-dark">
+                <h2 class="accordion-header" id="flush-headingfirstfourth">
+                  <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapsefirstfourth" aria-expanded="false"
+                    aria-controls="flush-collapsefirstfourth">
+                    Data scientist
+                  </button>
+                </h2>
+                <div id="flush-collapsefirstfourth" class="accordion-collapse collapse"
+                  aria-labelledby="flush-headingfirstfourth" data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <ul style="  list-style-type: none;">
+                      <li>Data Analyst</li>
+                      <li>Data scientist </li>
+                      <li>Tenserflow</li>
+                      <li>Machiner learning Engineer</li>
+                      <li>Deep learning Engineer</li>
+                      <li>NLP Engineer</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-2 mb-md-0">
+          <h5 class="text-uppercase m-2">Buisness</h5>
+          <ul class="list-unstyled">
+            <div class="accordion accordion-flush bg-dark " id="accordionFlushExample">
+              <div class="accordion-item bg-dark">
+                <h2 class="accordion-header" id="flush-headingfour">
+                  <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapsefour" aria-expanded="false" aria-controls="flush-collapsefour">
+                    Buisness management
+                  </button>
+                </h2>
+                <div id="flush-collapsefour" class="accordion-collapse collapse" aria-labelledby="flush-headingfour"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <ul>
+                      <li> Buisness analyst</li>
+                      <li> Buisness analyst</li>
+                      <li> Buisness analyst</li>
+                      <li> Buisness analyst</li>
+                      <li> Buisness analyst</li>
+                      <li> Buisness analyst</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item bg-dark">
+                <h2 class="accordion-header" id="flush-headingfive">
+                  <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapsefive" aria-expanded="false" aria-controls="flush-collapsefive">
+                    marketing
+                  </button>
+                </h2>
+                <div id="flush-collapsefive" class="accordion-collapse collapse" aria-labelledby="flush-headingfive"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <ul>
+                      <li> Buisness analyst</li>
+                      <li> Buisness analyst</li>
+                      <li> Buisness analyst</li>
+                      <li> Buisness analyst</li>
+                      <li> Buisness analyst</li>
+                      <li> Buisness analyst</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item bg-dark">
+                <h2 class="accordion-header" id="flush-headingsix">
+                  <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapsesix" aria-expanded="false" aria-controls="flush-collapsesix">
+                    Administration
+                  </button>
+                </h2>
+                <div id="flush-collapsesix" class="accordion-collapse collapse" aria-labelledby="flush-headingsix"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <ul>
+                      <li> Buisness analyst</li>
+                      <li> Buisness analyst</li>
+                      <li> Buisness analyst</li>
+                      <li> Buisness analyst</li>
+                      <li> Buisness analyst</li>
+                      <li> Buisness analyst</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase m-2"> Video and Animation </h5>
+          <ul class="list-unstyled mb-0">
+            <div class="accordion bg-dark accordion-flush bg-dark " id="accordionFlushExample">
+              <div class="accordion-item bg-dark">
+                <h2 class="accordion-header" id="flush-headingseven">
+                  <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseseven" aria-expanded="false" aria-controls="flush-collapseseven">
+                    Video Editing
+                  </button>
+                </h2>
+                <div id="flush-collapseseven" class="accordion-collapse collapse" aria-labelledby="flush-headingseven"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <ul>
+                      <li> Video Editing </li>
+                      <li> Short video advertising</li>
+                      <li> Lyrical and Music Video</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item bg-dark">
+                <h2 class="accordion-header" id="flush-headingeight">
+                  <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseeight" aria-expanded="false" aria-controls="flush-collapseeight">
+                    Photography
+                  </button>
+                </h2>
+                <div id="flush-collapseeight" class="accordion-collapse collapse" aria-labelledby="flush-headingeight"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <ul>
+                      <li>Product Photography</li>
+                      <li>Local Photography</li>
+                      <li>Drone Videography</li>
+                      <li> Other</li>
+
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item bg-dark  ">
+                <h2 class="accordion-header" id="flush-headingnine">
+                  <button class="accordion-button collapsed bg-dark text-light" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapsenine" aria-expanded="false" aria-controls="flush-collapsenine">
+                    Animation
+                  </button>
+                </h2>
+                <div id="flush-collapsenine" class="accordion-collapse collapse" aria-labelledby="flush-headingnine"
+                  data-bs-parent="#accordionFlushExample">
+                  <div class="accordion-body">
+                    <ul>
+                      <li> Visual Effects</li>
+                      <li>Lottie & Website Animation</li>
+                      <li> Animation for Kids</li>
+                      <li> Animation for Streamers</li>
+                      <li>3D Product Animation</li>
+                      <li> </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase mb-0">Links</h5>
+
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!" class="text-dark">Link 1</a>
+            </li>
+            <li>
+              <a href="#!" class="text-dark">Link 2</a>
+            </li>
+            <li>
+              <a href="#!" class="text-dark">Link 3</a>
+            </li>
+            <li>
+              <a href="#!" class="text-dark">Link 4</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <footer class="bg-dark text-center text-white">
+    <div class="container p-4 pb-0">
+      <section class="mb-4">
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-google"></i></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-linkedin-in"></i></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-github"></i></a>
+      </section>
+    </div>
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2020 Copyright:
+      <a class="text-white" href="{% url 'home' %}">MyStartUp.com</a>
+    </div>
+  </footer>
+</body>
+<script>
+  const typedTextSpan = document.querySelector(".typed-text");
+  const cursorSpan = document.querySelector(".cursor");
+
+  const textArray = ["Have an Idea ?", "Want to Implement ?"];
+  const typingDelay = 200;
+  const erasingDelay = 100;
+  const newTextDelay = 2000; // Delay between current and next text
+  let textArrayIndex = 0;
+  let charIndex = 0;
+
+  function type() {
+    if (charIndex < textArray[textArrayIndex].length) {
+      if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+      typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+      charIndex++;
+      setTimeout(type, typingDelay);
+    }
+    else {
+      cursorSpan.classList.remove("typing");
+      setTimeout(erase, newTextDelay);
+    }
+  }
+
+  function erase() {
+    if (charIndex > 0) {
+      if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+      typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+      charIndex--;
+      setTimeout(erase, erasingDelay);
+    }
+    else {
+      cursorSpan.classList.remove("typing");
+      textArrayIndex++;
+      if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+      setTimeout(type, typingDelay + 1100);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function () { // On DOM Load initiate the effect
+    if (textArray.length) setTimeout(type, newTextDelay + 250);
+  });
+</script>
+
+<script src="{% static 'js/newhome.js' %}"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+  integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+  integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
+</html>

@@ -1,0 +1,1399 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@200&display=swap" rel="stylesheet">
+  <title>Profile</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    .container-fluid {
+      margin-top: 5rem;
+    }
+
+    /* nav {
+	      position: fixed;
+	      z-index: 10;
+	      left: 0;
+	      right: 0;
+	      top: 0;
+	      font-family: 'Montserrat', sans-serif;
+	      padding: 0 1%;
+	      height: 70px;
+	      background-color: black;
+      }
+      nav .logo {
+	      float: left;
+	      width: 40%;
+	      height: 100%;
+	      display: flex;
+	      align-items: center;
+	      font-size: 24px;
+	      color: #fff;
+      }
+      nav .links {
+	      float: right;
+	      padding: 0;
+	      margin: 0;
+	      width: 60%;
+	      height: 0%;
+	      display: flex;
+	      justify-content: space-around;
+	      align-items: center;
+      }
+      nav .links li {
+	      list-style: none;
+      }
+      nav .links a {
+	      display: block;
+	      padding: 1em;
+	      font-size: 16px;
+	      font-weight: bold;
+	      color: #fff;
+	      text-decoration: none;
+      }
+      #nav-toggle {
+	      position: absolute;
+	      top: -100px;
+      }
+      nav .icon-burger {
+	      display: none;
+	      position: absolute;
+	      right: 5%;
+	      top: 50%;
+	      transform: translateY(-50%);
+      }
+      nav .icon-burger .line {
+	      width: 30px;
+	      height: 5px;
+	      background-color: #fff;
+	      margin: 5px;
+	      border-radius: 3px;
+	      transition: all .3s ease-in-out;
+      }
+      @media screen and (max-width: 768px) {
+
+
+	      nav .logo {
+
+		      float: none;
+		      width: auto;
+		      justify-content: center;
+	      }
+	      nav .links {
+		      float: none;
+		      position: fixed;
+		      z-index: 9;
+		      left: 0;
+		      right: 0;
+		      top: 100px;
+		      bottom: 100%;
+		      width: auto;
+		      height: auto;
+		      flex-direction: column;
+		      justify-content: space-evenly;
+		      background-color: rgba(0,0,0,.8);
+		      overflow: hidden;
+		      box-sizing: border-box;
+		      transition: all .5s ease-in-out;
+	      }
+	      nav .links a {
+		      font-size: 20px;
+	      }
+	      nav :checked ~ .links {
+		      bottom: 0;
+	      }
+	      nav .icon-burger {
+		      display: block;
+	      }
+	      nav :checked ~ .icon-burger .line:nth-child(1) {
+		      transform: translateY(10px) rotate(225deg);
+	      }
+	      nav :checked ~ .icon-burger .line:nth-child(3) {
+		      transform: translateY(-10px) rotate(-225deg);
+	      }
+	      nav :checked ~ .icon-burger .line:nth-child(2) {
+		      opacity: 0;
+	      }
+	
+      } */
+
+    .logo-1 {
+      width: 25%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .logo-1 img {
+      width: 50%;
+      border: white solid 2px;
+      border-radius: 50%;
+    }
+
+
+    .top {
+      height: 220px;
+      background-color: #ffffff26;
+      width: 96%;
+      margin: 2rem;
+      padding: 1rem;
+      display: flex;
+      /* border: solid 2px black; */
+      border-radius: 1rem;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .logo {
+      border: black 1px solid;
+      padding: 5px 5px;
+    }
+
+    /* .img{
+        height: 160px;
+        background-color: white;
+        border: 1px solid black;
+        width: 145px;
+        margin-left: 30px;
+      } */
+
+    .about {
+      margin-left: 30px;
+
+    }
+
+    .request {
+      float: right;
+    }
+
+    .request1 {
+      border: 2px black;
+      border-radius: 20px;
+
+      align-items: center;
+    }
+
+    .edit {
+      margin: 2rem;
+    }
+
+    .logo {
+      margin-left: 12px;
+      margin-top: 10px;
+    }
+
+    .rating-wrapper {
+      display: flex;
+      direction: rtl;
+    }
+
+    .rating-wrapper input {
+      display: none;
+
+    }
+
+    .rating-wrapper label {
+      display: inline-block;
+      width: 50px;
+      position: relative;
+      cursor: pointer;
+
+    }
+
+    .rating-wrapper label:before {
+      content: "\2605";
+      position: absolute;
+      font-size: 50px;
+      display: inline-block;
+      top: 0;
+      left: 0;
+    }
+
+    .rating-wrapper label:after {
+      content: "\2605";
+      position: absolute;
+      font-size: 50px;
+      display: inline-block;
+      top: 0;
+      left: 0;
+      color: blue;
+      opacity: 0;
+    }
+
+    .rating-wrapper label:hover:after,
+    .rating-wrapper label:hover~label:after,
+    .rating-wrapper input:checked~label:after {
+      opacity: 1;
+    }
+
+    .h4 {
+      align-items: center;
+    }
+
+    .card-left {
+      font-family: 'PT Serif', serif;
+      align-items: center;
+      border: 2px solid black;
+      background-color: #f1eeed;
+    }
+
+    .card-right {
+      height: 100%;
+      border: 2px solid black;
+      padding-left: 10px;
+      padding-right: 5px;
+      background-color: #f1eeed;
+    }
+
+    .btn1 {
+      background: #28a428;
+      border-radius: 10px;
+      color: white;
+      border: none;
+      padding: 0.5rem;
+    }
+
+    .btn2 {
+      float: right;
+      background-color: #f5fffa;
+      border-radius: 10px;
+      border: none;
+      padding: 0.5rem;
+    }
+
+    .button {
+      display: inline-flex;
+      height: 40px;
+      padding: 0;
+      border: none;
+      outline: none;
+      border-radius: 5px;
+      overflow: hidden;
+      font-size: 20px;
+      background-color: #6dcec5e3 !important;
+
+    }
+
+    .button:active {
+      background-color: #596673;
+    }
+
+    .button_icon,
+    .button_text {
+      display: inline-flex;
+      padding: 0 20px;
+      align-items: center;
+      height: 100%;
+      /* color: black; */
+    }
+
+    .button_icon {
+      color: black;
+      background-color: rgba(0, 0, 0, 0.08);
+      font-size: 0.7em;
+    }
+
+    .button_text {
+      color: white;
+    }
+
+    .Heading {
+      background-color: #0d6efdad;
+    }
+
+    .smHeading {
+      background-color: #d9d9d9;
+    }
+
+    .para {
+      background-color: #f2f2f2;
+    }
+
+    #hiring,
+    #editpr {
+      transition: all ease-in-out .3s;
+    }
+
+    #hiring:hover,
+    #editpr:hover {
+      box-shadow: 0 0 1rem rgba(33, 33, 33, .5);
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #666;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+
+    li {
+      float: left;
+      border-right: 1px solid #bbb;
+    }
+
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    /* Change the link color to #111 (black) on hover */
+    li a:hover {
+      background-color: #111;
+    }
+
+    li a.active {
+      background-color: #4CAF50;
+    }
+
+    .season_tabs {
+      position: relative;
+      min-height: 360px;
+      /* This part sucks */
+      clear: both;
+      margin: 2rem;
+    }
+
+    .season_tab {
+      float: left;
+      clear: both;
+      width: 286px;
+    }
+
+    .season_tab label {
+      background: #eee;
+      padding: 10px;
+      border: 1px solid #ccc;
+      margin-left: -1px;
+      font-size: 21px;
+      vertical-align: middle;
+      position: relative;
+      left: 1px;
+      width: 264px;
+      height: 68px;
+      display: table-cell;
+    }
+
+    .season_tab [type=radio] {
+      display: none;
+    }
+
+    .season_content {
+      position: absolute;
+      top: 0;
+      left: 286px;
+      background: white;
+      right: 0;
+      bottom: 0;
+      padding: 20px;
+      height: 25.5rem;
+      border: 1px solid #ccc;
+    }
+
+    .season_content span {
+      animation: 0.5s ease-out 0s 1 slideInFromTop;
+    }
+
+    [type=radio]:checked~label {
+      background: white;
+      border-bottom: 2px solid #8bc34a;
+      z-index: 2;
+    }
+
+    [type=radio]:checked~label~.season_content {
+      z-index: 1;
+    }
+
+    @-webkit-keyframes fadeEffect {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeEffect {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .checked {
+      color: orange;
+    }
+
+    #flexSwitchCheckDefault {
+      cursor: pointer;
+    }
+
+    /* Style the tab */
+    .tab {
+      overflow: hidden;
+      border: 1px solid #ccc;
+      background-color: #f1f1f1;
+    }
+
+    /* Style the buttons inside the tab */
+    .tab button {
+      background-color: inherit;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      transition: 0.3s;
+      font-size: 17px;
+    }
+
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+      background-color: #ddd;
+    }
+
+    /* Create an active/current tablink class */
+    .tab button.active {
+      background-color: #ccc;
+    }
+
+    /* Style the tab content */
+    .tabcontent {
+      display: none;
+      padding: 6px 12px;
+      -webkit-animation: fadeEffect 1s;
+      animation: fadeEffect 1s;
+    }
+
+    /* Fade in tabs */
+    @-webkit-keyframes fadeEffect {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeEffect {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+
+    .rwd-table {
+      margin: auto;
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .rwd-table tr:first-child {
+      border-top: none;
+      background: #464646;
+      color: #fff;
+    }
+
+    .rwd-table tr {
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      background-color: #ffffff;
+    }
+
+    .rwd-table tr:nth-child(odd):not(:first-child) {
+      background-color: #fefefe;
+    }
+
+    .rwd-table th {
+      display: none;
+    }
+
+    .rwd-table td {
+      display: block;
+    }
+
+    .rwd-table td:first-child {
+      margin-top: .5em;
+    }
+
+    .rwd-table td:last-child {
+      margin-bottom: .5em;
+    }
+
+    .rwd-table td:before {
+      content: attr(data-th) ": ";
+      font-weight: bold;
+      width: 120px;
+      display: inline-block;
+      color: #000;
+    }
+
+    .rwd-table th,
+    .rwd-table td {
+      text-align: left;
+    }
+
+    .rwd-table {
+      color: #333;
+      border-radius: .4em;
+      overflow: hidden;
+    }
+
+    .rwd-table tr {
+      border-color: #bfbfbf;
+    }
+
+    .rwd-table th,
+    .rwd-table td {
+      padding: .5em 1em;
+    }
+
+    @media screen and (max-width: 601px) {
+      .rwd-table tr:nth-child(2) {
+        border-top: none;
+      }
+    }
+
+    @media screen and (min-width: 600px) {
+      .rwd-table tr:hover:not(:first-child) {
+        background-color: #d8d8d8;
+      }
+
+      .rwd-table td:before {
+        display: none;
+      }
+
+      .rwd-table th,
+      .rwd-table td {
+        display: table-cell;
+        padding: .25em .5em;
+      }
+
+      .rwd-table th:first-child,
+      .rwd-table td:first-child {
+        padding-left: 0;
+      }
+
+      .rwd-table th:last-child,
+      .rwd-table td:last-child {
+        padding-right: 0;
+      }
+
+      .rwd-table th,
+      .rwd-table td {
+        padding: 1em !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <ul>
+    <li><a href="{% url 'home' %}">Home</a></li>
+    <li><a href="{% url 'dashboard'%}"">Dashboard</a></li>
+    <li><a href=" #">Contact</a></li>
+    <li><a href="#">About</a></li>
+    <li style="float: right;margin-right: 1rem;"><a href="{% url 'logout' %}">Logout</a></li>
+  </ul>
+  <!-- Modal -->
+  <div class="container-fluid">
+
+    <div class="top" style="height: 15rem;">
+      <div class="img" style="padding: 1rem;">
+        <!-- <img style="height: 11rem;width:9rem"
+          src="https://previews.123rf.com/images/timwit/timwit2006/timwit200600045/151844576-business-portrait-of-a-woman-in-a-blue-office-dress-on-white-background-business-profile-photo-of-ha.jpg"
+          alt=""> -->
+        <img style="height: 10rem;width:10rem" src="{{profile.Profile_photo.url}}" alt="">
+      </div>
+      <div class="about" style="padding: 1rem;">
+        <h3> <b>Name : {{profile.user.first_name}} {{profile.user.last_name}}</b></h3>
+        <br>
+        <h5>College / Organization : {{profile.Clg_Org}}</h5>
+        &nbsp;
+        <h5>Year : {{profile.Year}} &nbsp; &nbsp; Branch : {{profile.Branch_Dept}}</h5>
+      </div>
+      <div class="request d-lg-block d-none" style="padding: 1rem;margin-top:1rem;margin-left:20rem;float: right;">
+        {% if request.user != profile.user %}
+
+
+        {% if show %}
+        <!-- for no connection  -->
+        <form action="{% url 'connect' %}" method="post" style="margin: 0.5rem;">
+          {% csrf_token %}
+          <input type="hidden" name="sender" value="{{request.user}}">
+          <input type="hidden" name="reciever" value="{{profile.user}}">
+          <button type="submit" class="btn1" id="hiring" style="border-radius:5px;"><i class="fas fa-plus"></i> Connect
+          </button>
+        </form>
+        {% else %}
+        <div style="margin:0.5rem">
+          {% if connected %}
+          Connected !
+          {% else %}
+          {% if not hide %}
+          Request Sent !
+          {% endif %}
+          {% endif %}
+        </div>
+        {% endif %}
+
+        {% for j in rc %}
+        {% if j.Sender == profile and j.Acceptance == False %}
+        <div style="display: flex;">
+          <form action="{% url 'accept' %}" method="post" style="margin: 0.5rem;">
+            {% csrf_token %}
+            <input type="hidden" name="sender" value="{{profile.user}}">
+            <input type="hidden" name="reciever" value="{{request.user}}">
+            <input type="hidden" name="from" value="fromprofile">
+            <button type="submit" class="btn btn-success">Accept</button>
+          </form>
+          <form action="{% url 'reject' %}" method="post" style="margin: 0.5rem;">
+            {% csrf_token %}
+            <input type="hidden" name="sender" value="{{profile.user}}">
+            <input type="hidden" name="reciever" value="{{request.user}}">
+            <input type="hidden" name="from" value="fromprofile">
+            <button type="submit" class="btn btn-danger">Reject</button>
+          </form>
+        </div>
+        {% endif %}
+        {% endfor %}
+
+
+
+        {% endif %}
+      </div>
+      {% if request.user == profile.user %}
+      <div class="edit d-lg-block d-none">
+        <a href="{% url 'edit' %}">
+        <button class="btn2" id="editpr" style="border-radius:5px;">Edit profile</button>
+        </a>
+      </div>
+      {% endif %}
+      <hr>
+    </div>
+    <br>
+    <!-- <hr> -->
+    <!-- <div class="request1  d-lg-none text-center">
+      {% if request.user != profile.user %}
+      <button class=" btn1">
+        <h4><b><i class="fas fa-plus"></i> Put a Hiring Request</b></h4>
+      </button>
+      {% else %}
+      Hi
+      {% endif %}
+    </div> -->
+    <div class="mytabs">
+      <div class="season_tabs">
+
+        <div class="season_tab">
+          <input type="radio" id="tab-1" name="tab-group-1" checked>
+          <label for="tab-1">
+            <span style="padding: 1px;margin:5px"><i class="fa fa-cogs"></i></span>
+            Skills
+          </label>
+
+          <div class="season_content">
+            <div>
+              <h2 style="text-align: center;padding: 1rem;">Skills</h2>
+              <hr>
+              <div class="form-check form-switch mb-3" style="overflow-y: scroll;max-height: 15rem;">
+                <!-- style="display: flex;justify-content: center;align-items: center; -->
+
+                <!-- <div>
+                      <h5> <strong>1. Skill No. 1 </strong></h5>
+                      <span>Description : Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium maiores iusto quia rem voluptates numquam sunt necessitatibus aliquid nostrum quae, magni cupiditate id, fugit ea ipsam facere veritatis quo vitae?</span>
+                    </div>
+                    <br> -->
+
+                {% for i,v in profile.Skills.items %}
+                <div>
+                  <h5> <strong>{{forloop.counter}}. {{i}} </strong></h5>
+                  <span>Description : {{v}} </span>
+                </div>
+                <br>
+                {% endfor %}
+
+                <!-- <div>
+                      <h5> <strong>3. Skill No. 3 </strong></h5>
+                      <span>Description : Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium maiores iusto quia rem voluptates numquam sunt necessitatibus aliquid nostrum quae, magni cupiditate id, fugit ea ipsam facere veritatis quo vitae?</span>
+                    </div>
+                    <br> 
+                    <div>
+                      <h5> <strong>4. Skill No. 4 </strong></h5>
+                      <span>Description : Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium maiores iusto quia rem voluptates numquam sunt necessitatibus aliquid nostrum quae, magni cupiditate id, fugit ea ipsam facere veritatis quo vitae?</span>
+                    </div> -->
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="season_tab">
+          <input type="radio" id="tab-2" name="tab-group-1">
+          <label for="tab-2">
+            <span style="padding: 1px;margin:5px"><i class="fas fa-trophy mr-1"></i></span>
+            Acheivements
+          </label>
+
+          <div class="season_content">
+            <div>
+              <h2 style="text-align: center;padding: 1rem;">Acheivements</h2>
+              <hr>
+              <div class="form-check form-switch mb-3" style="overflow-y: scroll;max-height: 15rem;">
+                <!-- style="display: flex;justify-content: center;align-items: center; -->
+                <!-- <div>
+                      <h5> <strong>1. Acheivement No. 1 </strong></h5>
+                      <span>Description : Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium maiores iusto quia rem voluptates numquam sunt necessitatibus aliquid nostrum quae, magni cupiditate id, fugit ea ipsam facere veritatis quo vitae?</span>
+                    </div>
+                    <br>
+                    <div>
+                      <h5> <strong>2. Acheivement No. 2 </strong></h5>
+                      <span>Description : Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium maiores iusto quia rem voluptates numquam sunt necessitatibus aliquid nostrum quae, magni cupiditate id, fugit ea ipsam facere veritatis quo vitae?</span>
+                    </div>
+                    <br> -->
+                {% for i,v in profile.Achivements.items %}
+                <div>
+                  <h5> <strong>{{forloop.counter}}. {{i}} </strong></h5>
+                  <span>Description : {{v}} </span>
+                </div>
+                <br>
+                {% endfor %}
+                <!-- <div>
+                      <h5> <strong>3. Acheivement No. 3 </strong></h5>
+                      <span>Description : Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium maiores iusto quia rem voluptates numquam sunt necessitatibus aliquid nostrum quae, magni cupiditate id, fugit ea ipsam facere veritatis quo vitae?</span>
+                    </div>
+                    <br>
+                    <div>
+                      <h5> <strong>4. Acheivement No. 4 </strong></h5>
+                      <span>Description : Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium maiores iusto quia rem voluptates numquam sunt necessitatibus aliquid nostrum quae, magni cupiditate id, fugit ea ipsam facere veritatis quo vitae?</span>
+                    </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="season_tab">
+          <input type="radio" id="tab-3" name="tab-group-1">
+          <label for="tab-3">
+            <span style="padding: 1px;margin:5px"><i class="fas fa-wrench"></i></span>
+            My Projects
+          </label>
+
+          <div class="season_content">
+            <div>
+              <h2 style="text-align: center;padding: 1rem;">My Projects </h2>
+              <hr>
+              <div class="form-check form-switch mb-3" style="overflow-y: scroll;max-height: 15rem;">
+                You will see my projects soon.
+              </div>
+            </div>
+          </div>
+          <div class="season_tab">
+            <input type="radio" id="tab-4" name="tab-group-1">
+            <label for="tab-4">
+              <span style="padding: 1px;margin:5px"><i class="fa fa-star"></i></span>
+              Ratings
+            </label>
+
+            <div class="season_content">
+              <div>
+                <h5 style="display: inline;">Project 1 : </h5>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star checked"></span>
+                <span class="fa fa-star"></span>
+                <span class="fa fa-star"></span>
+              </div>
+            </div>
+          </div>
+          {% if request.user != profile.user %}
+          <div class="season_tab">
+            <input type="radio" id="tab-5" name="tab-group-1">
+            <label for="tab-5">
+              <span style="padding: 1px;margin:5px"><i class="fa fa-tasks"></i></span>
+              Working Status
+            </label>
+
+            <div class="season_content">
+              <h2 style="text-align: center;padding: 1rem;">Working Status</h2>
+              <hr>
+              <div class="form-check form-switch mb-3"
+                style="display: flex;justify-content: center;align-items: center;">
+                {% if profile.Working_status %}
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault1" disabled checked>
+                {% else %}
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault1" disabled>
+                {% endif %}
+                <span for="flexSwitchCheckDefault1" style="margin: 1rem;">Ready to Work</span>
+              </div>
+
+            </div>
+          </div>
+          {% else %}
+          <div class="season_tab">
+            <input type="radio" id="tab-5" name="tab-group-1">
+            <label for="tab-5">
+              <span style="padding: 1px;margin:5px"><i class="fa fa-link"></i></span>
+              Connections
+            </label>
+
+            <div class="season_content">
+              <h2 style="text-align: center;padding: 1rem;">Connections List</h2>
+              <hr>
+              <div class="form-check form-switch mb-3">
+                <div id="mydiv" style="display: flex;justify-content: center;align-items: center;">
+                  {% if profile.Working_status %}
+                  <input class="form-check-input" onclick='location.href = "/panel/toggle";' type="checkbox"
+                    id="flexSwitchCheckDefault" checked>
+                  {% else %}
+                  <input class="form-check-input" onclick='location.href = "/panel/toggle";' type="checkbox"
+                    id="flexSwitchCheckDefault">
+                  {% endif %}
+                  <span style="margin: 1rem;">Ready to Work</span>
+                  <br>
+                </div>
+                <div class="tab">
+                  <button class="tablinks" onclick="openCity(event, 'Recieved')" id="defaultOpen">Recieved
+                    Invites <span style="color: #3b8855;">({{c}})</span></button>
+                  <!-- rgb(90, 221, 85);" -->
+                  <button class="tablinks" onclick="openCity(event, 'Sent')">Sent Invitations <span
+                      style="color: #d65;">({{c1}})</span></button>
+                  <button class="tablinks" onclick="openCity(event, 'All')">Total Connections <span
+                      style="color: #42a2b9;">({{len}})</span></button>
+                  <button class="tablinks" id="showall" style="float:right;background-color: #106cf6;color: white;"
+                    data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Show All
+                  </button>
+                </div>
+
+                <div id="Recieved" class="tabcontent">
+                  <div class="form-check form-switch mb-3" style="overflow-y: scroll;max-height: 5rem;">
+                    <br>
+                    {% for q in rc %}
+                    {% if q.Acceptance == False %}
+                    <!-- Add for here  -->
+                    <div>
+                      <a href="{% url 'Profile' %}?query={{q.Sender.user.username}}">{{q.Sender.user.first_name}}
+                        {{q.Sender.user.last_name}}
+                      </a>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                    <!-- till here  -->
+                    {% if c == 0 %}
+                    <div>
+                      <br>
+                      No Recieved Invitations !
+                      <br>
+                    </div>
+                    {% endif %}
+                  </div>
+                </div>
+
+                <div id="Sent" class="tabcontent">
+                  <div class="form-check form-switch mb-3" style="overflow-y: scroll;max-height: 5rem;">
+                    <br>
+                    <!-- Add for here  -->
+                    <!-- <div>
+                      <br>
+                      <h5> <strong>Conector Name 1</strong></h5>
+                      <span>Description : Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio possimus
+                        explicabo molestiae eligendi placeat minima iure ducimus at quae voluptatum, consequuntur eius
+                        perferendis cum fugiat. </span>
+                    </div> -->
+                    <!-- <br> -->
+                    {% for q in sc %}
+                    {% if q.Acceptance == False %}
+                    <!-- Add for here  -->
+                    <div>
+                      <a href="{% url 'Profile' %}?query={{q.Reciever.user.username}}">{{q.Reciever.user.first_name}}
+                        {{q.Reciever.user.last_name}}
+                      </a>
+                    </div>
+                    {% endif %}
+                    {% endfor %}
+                    <!-- till here  -->
+                    {% if c1 == 0 %}
+                    <div>
+                      <br>
+                      No Sent Invitations !
+                      <br>
+                    </div>
+                    {% endif %}
+                  </div>
+                </div>
+                <div id="All" class="tabcontent">
+                  <div class="form-check form-switch mb-3" style="overflow-y: scroll;max-height: 5rem;">
+                    <br>
+                    {% for q in ac %}
+                    <!-- Add for here  -->
+                    {% if q.Acceptance == True %}
+                    {% if q.Sender.user == request.user %}
+                    <div>
+                      <a href="{% url 'Profile' %}?query={{q.Reciever.user.username}}">{{q.Reciever.user.first_name}}
+                        {{q.Reciever.user.last_name}}
+                      </a>
+                    </div>
+                    {% else %}
+                    <div>
+                      <a href="{% url 'Profile' %}?query={{q.Sender.user.username}}">{{q.Sender.user.first_name}}
+                        {{q.Sender.user.last_name}}
+                      </a>
+                    </div>
+                    {% endif %}
+
+                    {% endif %}
+                    {% endfor %}
+                    <!-- till here  -->
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          {% endif %}
+        </div>
+        <div class="season_tab">
+          <input type="radio" id="tab-6" name="tab-group-1">
+          <label for="tab-6">
+            <span style="padding: 1px;margin:5px"><i class="fa-solid fa-address-book"></i></span>
+            Contacts
+          </label>
+
+          <div class="season_content">
+            <div>
+              <h3 style="text-align: center;padding: 0.5rem;">Contact Me</h3>
+              <hr>
+              <h5>Linkedin</h5>
+              <input type="link" style="width: 60%;padding: 0.5rem;" value="{{profile.Linkedin}}" disabled> &nbsp;
+              <a href="{{profile.Linkedin}}" target="_blank">Have a look</a>
+              <br>
+              <br>
+              <h5>Email Id</h5>
+              <input type="link" style="width: 60%;padding: 0.5rem;" value="{{profile.Email}}" disabled> &nbsp;
+              <a href="mailto:{{profile.Email}}">Want to mail ?</a>
+              <br>
+              <br>
+              <h5>Phone</h5>
+              <input type="tel" style="width: 60%;padding: 0.5rem;" value="{{profile.Mobile}}" disabled> &nbsp;
+              <a href="tel:{{profile.Mobile}}">Have a call</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+
+  </div>
+
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" style="overflow: scroll;max-height: 20rem;">
+
+
+
+          <div id="Recieved_body">
+            <table class="rwd-table">
+              <tbody>
+
+                {% if c == 0 %}
+                <tr>
+                  <th>
+                    <center> Status </center>
+                  </th>
+                </tr>
+                <tr>
+                  <td>
+                    <center>
+                      No Invitations Found!
+                    </center>
+                  </td>
+                </tr>
+                {% else %}
+
+                <tr>
+                  <th>
+                    <center> Name </center>
+                  </th>
+                  <th>&nbsp;</th>
+                  <th>
+                    <center> Action </center>
+                  </th>
+                </tr>
+
+                <!-- <tr>
+                  <td data-th="Supplier Code">
+                    <center>
+                    Tejas Methawade 
+                  </center>
+                  </td>
+                  <td data-th="Supplier Name">
+                  </td>
+                  <td data-th="Invoice Number">
+                    <center>
+                      <button type="button" class="btn btn-success">Accept</button>
+                      <button type="button" class="btn btn-danger">Reject</button>
+                    </center>
+                  </td>
+                </tr> -->
+
+                {% for i in rc %}
+                {% if i.Acceptance == False %}
+                <tr>
+                  <td data-th="Supplier Code">
+                    <center>
+                      {{i.Sender}}
+                    </center>
+                  </td>
+                  <td data-th="Supplier Name">
+                  </td>
+                  <td data-th="Invoice Number">
+                    <div style="display: flex;">
+                      <form action="{% url 'accept' %}" method="post" style="margin: 0.5rem;">
+                        {% csrf_token %}
+                        <input type="hidden" name="sender" value="{{i.Sender.user}}">
+                        <input type="hidden" name="reciever" value="{{request.user}}">
+                        <input type="hidden" name="from" value="fromlist">
+                        <button type="submit" class="btn btn-success">Accept</button>
+                      </form>
+                      <form action="{% url 'reject' %}" method="post" style="margin: 0.5rem;">
+                        {% csrf_token %}
+                        <input type="hidden" name="sender" value="{{i.Sender.user}}">
+                        <input type="hidden" name="reciever" value="{{request.user}}">
+                        <input type="hidden" name="from" value="fromlist">
+                        <button type="submit" class="btn btn-danger">Reject</button>
+                      </form>
+                    </div>
+                  </td>
+                </tr>
+                {% endif %}
+                {% endfor %}
+                <!-- <tr>
+                  <td data-th="Supplier Code">
+                    <center>
+                    BOX5599
+                  </center>
+                  </td>
+                  <td data-th="Supplier Name">
+                  </td>
+                  <td data-th="Invoice Number">
+                    <center>
+                    ASDF19218
+                  </center>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-th="Supplier Code">
+                    <center>
+                    PAN9999
+                  </center>
+                  </td>
+                  <td data-th="Supplier Name">
+                  </td>
+                  <td data-th="Invoice Number">
+                    <center>
+                    ASDF19218
+                  </center>
+                  </td>
+                </tr> -->
+                {% endif %}
+              </tbody>
+            </table>
+          </div>
+
+
+
+
+          <div id="Sent_body">
+            <table class="rwd-table">
+              <tbody>
+                {% if c1 == 0 %}
+                <tr>
+                  <th>
+                    <center> Status </center>
+                  </th>
+                </tr>
+                <tr>
+                  <td>
+                    <center>
+                      No Invitations Found!
+                    </center>
+                  </td>
+                </tr>
+                {% else %}
+                <tr>
+                  <th>
+                    <center> Name </center>
+                  </th>
+                  <th>&nbsp;</th>
+                  <th>
+                    <center> Action </center>
+                  </th>
+                </tr>
+                {% endif %}
+                <!-- <tr>
+                  <td data-th="Supplier Code">
+                    <center>
+                      UPS5005
+                    </center>
+                  </td>
+                  <td data-th="Supplier Name">
+                  </td>
+                  <td data-th="Invoice Number">
+                    <center>
+                      <button type="button" class="btn btn-warning">Cancel</button>
+                    </center>
+                  </td>
+                </tr> -->
+
+                {% for i in sc %}
+                {% if i.Acceptance == False %}
+                <tr>
+                  <td data-th="Supplier Code">
+                    <center>
+                      {{i.Reciever}}
+                    </center>
+                  </td>
+                  <td data-th="Supplier Name">
+                  </td>
+                  <td data-th="Invoice Number">
+                    <form action="{% url 'reject' %}" method="post" style="margin: 0.5rem;">
+                      {% csrf_token %}
+                      <input type="hidden" name="sender" value="{{request.user}}">
+                      <input type="hidden" name="reciever" value="{{i.Reciever.user}}">
+                      <input type="hidden" name="from" value="fromlist">
+                      <button type="submit" class="btn btn-warning">Cancel</button>
+                    </form>
+                  </td>
+                </tr>
+                {% endif %}
+                {% endfor %}
+
+                <!-- <tr>
+                  <td data-th="Supplier Code">
+                    <center>
+                      BOX5599
+                    </center>
+                  </td>
+                  <td data-th="Supplier Name">
+                  </td>
+                  <td data-th="Invoice Number">
+                    <center>
+                      ASDF19218
+                    </center>
+                  </td>
+                </tr> -->
+                <!-- <tr>
+                  <td data-th="Supplier Code">
+                    <center>
+                      PAN9999
+                    </center>
+                  </td>
+                  <td data-th="Supplier Name">
+                  </td>
+                  <td data-th="Invoice Number">
+                    <center>
+                      ASDF19218
+                    </center>
+                  </td>
+                </tr> -->
+              </tbody>
+            </table>
+          </div>
+          <br>
+
+
+
+          <div id="All_body">
+            <table class="rwd-table">
+              <tbody>
+                <tr>
+                  <th>
+                    <center> Name </center>
+                  </th>
+                  <th>&nbsp;</th>
+                  <th>
+                    <center> Action </center>
+                  </th>
+                </tr>
+                <!-- <tr>
+                  <td data-th="Supplier Code">
+                    <center>
+                    UPS5005
+                  </center>
+                  </td>
+                  <td data-th="Supplier Name">
+                  </td>
+                  <td data-th="Invoice Number">
+                    <center>
+                      <button type="button" class="btn btn-success">View Profile</button>
+                  </center>
+                  </td>
+                </tr> -->
+                {% for i in ac %}
+                {% if i.Acceptance == True %}
+                <tr>
+                  <td data-th="Supplier Code">
+                    <center>
+                      {% if i.Sender.user == request.user %}
+                      {{i.Reciever}}
+                      {% else %}
+                      {{i.Sender}}
+                      {% endif %}
+                    </center>
+                  </td>
+                  <td data-th="Supplier Name">
+                  </td>
+                  <td data-th="Invoice Number">
+                    <center>
+                      {% if i.Sender.user == request.user %}
+                      <a href="{% url 'Profile' %}?query={{i.Reciever}}">
+                        <button type="button" class="btn btn-success">View Profile</button>
+                      </a>
+                      {% else %}
+                      <a href="{% url 'Profile' %}?query={{i.Sender}}">
+                        <button type="button" class="btn btn-success">View Profile</button>
+                      </a>
+                      {% endif %}
+                    </center>
+                  </td>
+                </tr>
+                {% endif %}
+                {% endfor %}
+                <!-- <tr>
+                  <td data-th="Supplier Code">
+                    <center>
+                    BOX5599
+                  </center>
+                  </td>
+                  <td data-th="Supplier Name">
+                  </td>
+                  <td data-th="Invoice Number">
+                    <center>
+                    ASDF19218
+                  </center>
+                  </td>
+                </tr>
+                <tr>
+                  <td data-th="Supplier Code">
+                    <center>
+                    PAN9999
+                  </center>
+                  </td>
+                  <td data-th="Supplier Name">
+                  </td>
+                  <td data-th="Invoice Number">
+                    <center>
+                    ASDF19218
+                  </center>
+                  </td>
+                </tr> -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <br><br>
+  <script>
+    document.getElementById("defaultOpen").click();
+    function openCity(evt, cityName) {
+      var i, tabcontent, tablinks;
+      var title = document.getElementById("exampleModalLabel");
+      var r_body = document.getElementById("Recieved_body");
+      var s_body = document.getElementById("Sent_body");
+      var a_body = document.getElementById("All_body");
+      title.innerHTML = cityName;
+      if (cityName == 'Recieved') {
+        r_body.style.display = "block";
+        s_body.style.display = "none";
+        a_body.style.display = "none";
+      }
+      if (cityName == 'Sent') {
+        r_body.style.display = "none";
+        s_body.style.display = "block";
+        a_body.style.display = "none";
+      }
+      if (cityName == 'All') {
+        r_body.style.display = "none";
+        s_body.style.display = "none";
+        a_body.style.display = "block";
+      }
+      console.log(cityName);
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+      document.getElementById(cityName).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+  </script>
+  <!-- Optional JavaScript; choose one of the two! -->
+
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+    integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>

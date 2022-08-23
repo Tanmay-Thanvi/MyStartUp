@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="{% static 'css/epstyle.css' %}">
+
+    <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <title>Edit Information Form </title>
+</head>
+<body>
+    <div class="container">
+        <header>Edit Profile Form</header>
+
+        <form action="{% url 'edit' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form first">
+                <div class="details personal">
+                     <span class="title">Personal Details</span>
+
+                    <div class="fields">
+
+                      <div class="input-field">
+                          <label>Profile Picture</label>
+                          <input type="file" id="image-input" accept="image/jpeg, image/png, image/jpg" style="padding: 0.5rem;" name="profilephoto">
+                          <div id="display-image"></div>
+                      </div>
+
+                        <div class="input-field">
+                            <label>First Name <span style="color: red;">*</span></label>
+                            <input type="text" disabled value="{{profile.user.first_name}}" placeholder="Enter your First name" name="fname" required style="cursor: not-allowed;color:rgb(167, 167, 167)">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Last Name <span style="color: red;">*</span></label>
+                            <input type="text" disabled value="{{profile.user.last_name}}" placeholder="Enter your Last name" name="lname" required style="cursor: not-allowed;color:rgb(167, 167, 167)">
+                        </div>
+
+                        <div class="input-field">
+                            <label>Professional Email Id <span style="color: red;">*</span></label>
+                            <input type="text" placeholder="Enter your email to contact" name="pemail" value="{{profile.Email}}" required>
+                            <!-- style="cursor: not-allowed;color:rgb(167, 167, 167)" -->
+                        </div>
+
+                        <div class="input-field">
+                            <label>Mobile Number <span style="color: red;">*</span></label>
+                            <input type="text" maxlength="13" name="mobile" placeholder="Start with ISD Code (+91)" value="{{profile.Mobile}}" required>
+                        </div>
+
+                        <div class="input-field">
+                            <label>Gender <span style="color: red;">*</span></label>
+                            <select required name="gender">
+                                <option disabled selected>Select gender</option>
+                                {% if profile.Gender == 'male' %}{% endif %}
+                                <option value="male" {% if profile.Gender == 'male' %}selected{% endif %}>Male</option>
+                                <option value="female" {% if profile.Gender == 'female' %}selected{% endif %}>Female</option>
+                                <option value="others" {% if profile.Gender == 'others' %}selected{% endif %}>Others</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="details ID">
+                     <span class="title">College/Organization Details</span>
+
+                    <div class="fields">
+                      <div class="input-field">
+                          <label>Name of College / Org</label>
+                          <input type="text" placeholder="Enter name of your college" name="clg_org" value="{{profile.Clg_Org}}">
+                      </div>
+
+                      <div class="input-field">
+                          <label>Branch / Dept</label>
+                          <input type="text" placeholder="Enter your branch name" name="branch" value="{{profile.Branch}}">
+                      </div>
+
+                      <div class="input-field">
+                          <label>Year of Passing / Joining </label>
+                          <input type="number" placeholder="Enter your year of passing out" name="year" value="{{profile.Year}}">
+                      </div>
+
+                      <div class="input-field">
+                          <label>Working Status <span style="color: red;">*</span></label>
+                          <select required name="status">
+                              <option disabled selected>Select your working status</option>
+                              <option value="W" {% if profile.Working_status %}selected{% endif %}>Working</option>
+                              <option value="NW" {% if not profile.Working_status %}selected{% endif %}>Not-working</option>
+                              <!-- <option>Others</option> -->
+                          </select>
+                      </div>
+
+                      <div class="input-field">
+                          <label>Domain <span style="color: red;">*</span></label>
+                          <input type="text" placeholder="Enter your Domain of Work" name="domain" value="{{profile.Domain}}" required>
+                      </div>
+
+                      <div class="input-field">
+                          <label>Linked-in Profile <span style="color: red;">*</span></label>
+                          <input type="url" name="linkedin" placeholder="Please include http:/ or https:/ " value="{{profile.Linkedin}}" required>
+                      </div>
+                    </div>
+
+                    <button class="nextBtn">
+                         <span class="btnText">Next</span>
+                        <i class="uil uil-navigator"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div class="form second">
+                <div class="Skills/Achievements">
+                     <span class="title">Skills and Achievements</span>
+
+                    <div class="fields">
+
+                      <div class="input-field">
+                          <label>Skill-1 <span style="color: red;">*</span></label>
+                          <input type="text" id="Skill-1" name="skill_1" placeholder="Enter your top skill" required>
+                      </div>
+
+                      <div class="input-field">
+                          <label>Skill-2</label>
+                          <input type="text" id="Skill-2" name="skill_2" placeholder="Enter your skill">
+                      </div>
+
+                      <div class="input-field">
+                          <label>Skill-3</label>
+                          <input type="text" id="Skill-3" name="skill_3" placeholder="Enter your skill">
+                      </div>
+
+                      <div class="input-field">
+                          <label>Achievements-1 <span style="color: red;">*</span></label>
+                          <input type="text" id="Achievements-1" name="achievement_1" placeholder="Enter your achievement" required>
+                      </div>
+
+                      <div class="input-field">
+                          <label>Achievements-2</label>
+                          <input type="number" id="Achievements-2" name="achievement_2" placeholder="Enter your achievement">
+                      </div>
+
+                      <div class="input-field">
+                          <label>Achievement-3</label>
+                          <input type="number" id="Achievements-3" name="achievement_3" placeholder="Enter your achievement">
+                      </div>
+                    </div>
+                </div>
+
+                <div class="Projects">
+                     <span class="title">Projects</span>
+
+                    <div class="fields">
+                      <div class="input-field">
+                          <label>Project-1 Name <span style="color: red;">*</span></label>
+                          <input type="text" placeholder="Enter project name" name="project_1_name" required>
+                      </div>
+
+                      <div class="input-field">
+                          <label>Project-1 Description <span style="color: red;">*</span></label>
+                          <input type="text" placeholder="Enter Project-1 description" name="project_1_desc" required>
+                      </div>
+
+                      <div class="input-field">
+                          <label>Project-1 Link <span style="color: red;">*</span></label>
+                          <input type="url" placeholder="Enter Project-1 link" name="project_1_link" required>
+                      </div>
+
+                      <div class="input-field">
+                          <label>Project-2 Name</label>
+                          <input type="text" placeholder="Enter project name" name="project_2_name">
+                      </div>
+
+                      <div class="input-field">
+                          <label>Project-2 Description</label>
+                          <input type="text" placeholder="Enter Project-2 description" name="project_2_desc">
+                      </div>
+
+                      <div class="input-field">
+                          <label>Project-2 Link</label>
+                          <input type="url" placeholder="Enter Project-2 link" name="project_2_link">
+                      </div>
+                    </div>
+
+                    <div class="buttons">
+                        <div class="backBtn">
+                            <i class="uil uil-navigator"></i>
+                             <span class="btnText">Back</span>
+                        </div>
+
+                        <button class="sumbit" type="submit">
+                             <span class="btnText">Submit</span> 
+                            <!-- onclick="SubmitData()" -->
+                            <i class="uil uil-navigator"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="{% static 'js/epscript.js' %}"></script>
+</body>
+</html>

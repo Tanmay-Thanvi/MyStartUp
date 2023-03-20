@@ -56,6 +56,9 @@ def complete_profile(request):
         if (Profile.objects.filter(user=request.user).exists()):
             # Message : Already completed your profile want to edit ? 
             return redirect(views.home)
+        
+        for i in request.POST:
+            print(i,request.POST[i])
 
         if request.method == "POST":
             pemail = request.POST['pemail']
@@ -73,11 +76,11 @@ def complete_profile(request):
 
             # if request.FILES != {}:
             pphoto = request.FILES['profilephoto']
+            skills = {'Skill No.1 ':request.POST['skill_1'],'Skill No.2 ':request.POST['skill_2'],'Skill No.3 ':request.POST['skill_3']}
+            achievements = {'Achievement No.1 ':request.POST['achievement_1'],'Achievement No.2 ':request.POST['achievement_2'],'Achievement No.3 ':request.POST['achievement_3']}
             pobj = Profile.objects.create(user=request.user, Email=pemail, Mobile=mobile, Linkedin=linkedin, Domain=domain,
-                                          Year=year, Working_status=status, Clg_Org=clg_org, Gender=gender, Branch_Dept=branch, Profile_photo=pphoto)
+                                          Year=year, Working_status=status, Clg_Org=clg_org, Gender=gender, Branch_Dept=branch, Profile_photo=pphoto,Skills=skills,Achivements=achievements)
             pobj.save()
-            # skills achevements and projects section
-            # it is under process
             # Message : Profile updated successfully 
             return redirect(views.home)
         return render(request, 'index.html')

@@ -67,7 +67,6 @@ def toggle(request):
     profile = Profile.objects.get(user=request.user)
     profile.Working_status = not(profile.Working_status)
     profile.save()
-
     # add message working status updated 
     return redirect(Profile_page)
 
